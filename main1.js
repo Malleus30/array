@@ -20,7 +20,12 @@ const list = [
 function addTask(taskName){
 
    
-    const maxId = list[list.length-1].id+1;
+    let maxId = list[list.length-1];
+  if(maxId === undefined){
+    maxId =1;
+  }else{
+    maxId=list[list.length-1].id+1;
+  }
 
     list.push({id:maxId, name: taskName, status:toDo, priority:'high'});
 
